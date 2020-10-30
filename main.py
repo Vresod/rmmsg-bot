@@ -2,7 +2,6 @@
 
 import discord
 from discord.ext import commands
-from asyncio import sleep as aiosleep
 
 with open("tokenfile","r") as tokenfile:
 	token = tokenfile.read()
@@ -13,7 +12,7 @@ client.remove_command("help")
 @client.event
 async def on_ready():
 	print(f"logged in as {client.user}")
-	print(f"https://discord.com/oauth2/authorize?client_id={client.user.id}&permissions=&scope=bot")
+	print(f"https://discord.com/oauth2/authorize?client_id={client.user.id}&permissions=8192&scope=bot")
 	for guild in client.guilds:
 		print(f"In guild: {guild.name}") 
 
